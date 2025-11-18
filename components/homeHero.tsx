@@ -3,28 +3,21 @@ import React, { useState, useEffect } from "react";
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function Home() {
-  const links = [
-    "Home",
-    "About Us",
-    "Products",
-    "CSR",
-    "Resources & Insights",
-    "FAQ & Support",
-  ];
-
-  const [active, setActive] = useState("Home");
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+export default function HomeHero() {
+   
+  
 
   return (
     <main className="min-h-screen bg-white text-slate-900">
+          
+ 
+
+      {/* Hero Section */}
+      <section className="relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
             {/* Ellipses*/}
 
-      <div className="absolute bottom-40 -left-20 z-30">
+      <div className="absolute bottom-96 -left-20 z-30">
             <Image
               src="/Ellipse 3.png"
               alt="Ellipse 3"
@@ -44,7 +37,7 @@ export default function Home() {
               className="object-contain"
              />
         </div>
-      <div className="absolute -top-14 -left-2 z-30">
+      <div className="absolute -top-10 -left-2 z-30">
           <Image
              src="/Ellipse 5.png"
              alt="Ellipse 5"
@@ -54,64 +47,6 @@ export default function Home() {
   />
 </div>
 
-
-      <header className="max-w-7xl mx-auto px-6 pt-8 flex items-center justify-between">
-        {/* Logo */}
-        <div className="flex items-center ml-14">
-          <Image
-            src="/logo.png"
-            alt="logo"
-            width={90}
-            height={120}
-            className="object-contain"
-          />
-        </div>
-
-        {/* Navigation */}
-        {mounted && (
-  <nav className="hidden md:flex gap-12 items-center text-xl font-semibold leading-10 tracking-[-1px] font-sans">
-    {links.map((link) => {
-      const cleanLink = link.trim();  
-      return (
-        <div key={cleanLink} className="relative group">
-          <Link
-            href="#"
-            onClick={() => setActive(cleanLink)}
-            className="cursor-pointer inline-block"
-          >
-            {cleanLink}
-          </Link>
-          <span
-            className={`absolute left-0 -bottom-1 h-[3px] transition-all duration-300 ${
-              active === cleanLink
-                ? "w-full bg-[#D11417]"
-                : "w-0 bg-black group-hover:w-full"
-            }`}
-          ></span>
-        </div>
-      );
-    })}
-  </nav>
-)}
-
-
-        {/* Contact Button */}
-        <div className="hidden md:block">
-          <Link href="#">
-            <Image
-              src="/contact-button.png"
-              alt="Contact button"
-              width={160}
-              height={130}
-              className="object-contain mr-3.5"
-            />
-          </Link>
-        </div>
-      </header>
-
-      {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
           {/* Left content */}
           <div className="md:col-span-7 mt-3 ml-14 lg:col-span-6 z-10">
            <h1 

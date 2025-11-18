@@ -30,8 +30,6 @@ export default function Footer() {
               <a href="#">LinkedIn</a>
             </div>
           </div>
-
-          {/* RIGHT 3 COLUMNS */}
           
             {/* RIGHT 3 COLUMNS */}
 <div className="flex flex-col md:flex-row md:col-span-3 justify-center items-center gap-10">
@@ -39,7 +37,7 @@ export default function Footer() {
   <div>
     <h4 className="font-semibold -mt-5 mb-4">Quick Link</h4>
     <ul className="space-y-5 text-sm text-gray-300">
-      <li><a href="#">About Us</a></li>
+      <li><a href="/About">About Us</a></li>
       <li><a href="#">Our Products</a></li>
       <li><a href="#">CSR Initiatives</a></li>
       <li><a href="#">Careers</a></li>
