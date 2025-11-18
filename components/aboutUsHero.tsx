@@ -10,64 +10,11 @@ export default function AboutHero() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => setMounted(true), []);
-
-  const links = [
-    { name: "Home", href: "/" },
-    { name: "About Us", href: "/About" },
-    { name: "Products", href: "/products" },
-    { name: "CSR", href: "/csr" },
-    { name: "Resources & Insights", href: "/resources" },
-    { name: "FAQ & Support", href: "/faq" },
-  ];
+ 
 
   return (
     <main className="min-h-screen bg-white text-slate-900">
-      {/* Header */}
-      <header className="max-w-7xl mx-auto px-6 pt-8 flex items-center justify-between">
-        {/* Logo */}
-        <div className="flex items-center ml-14">
-          <Image
-            src="/logo.png"
-            alt="logo"
-            width={90}
-            height={120}
-            className="object-contain"
-          />
-        </div>
-
-        {/* Navigation */}
-        {mounted && (
-          <nav className="hidden md:flex gap-12 items-center text-xl font-semibold leading-10 tracking-[-1px] font-sans">
-            {links.map((link) => (
-              <div key={link.name} className="relative group">
-                <Link href={link.href} className="cursor-pointer inline-block">
-                  {link.name}
-                </Link>
-                <span
-                  className={`absolute left-0 -bottom-1 h-[3px] transition-all duration-300 ${
-                    pathname === link.href
-                      ? "w-full bg-[#D11417]"
-                      : "w-0 bg-black group-hover:w-full"
-                  }`}
-                ></span>
-              </div>
-            ))}
-          </nav>
-        )}
-
-        {/* Contact Button */}
-        <div className="hidden md:block">
-          <Link href="#">
-            <Image
-              src="/contact-button.png"
-              alt="Contact button"
-              width={160}
-              height={130}
-              className="object-contain mr-3.5"
-            />
-          </Link>
-        </div>
-      </header>
+       
 
       {/* About Section */}
       <section className="max-w-7xl mx-auto px-6 mt-30 flex flex-col md:flex-row items-center gap-12">
@@ -81,26 +28,36 @@ export default function AboutHero() {
 
           </p>
           <Link
-            href="#"
-            className="inline-block bg-[#D11417] text-white px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition"
-          >
-            Explore More
-          </Link>
+  href="#"
+  className="
+    inline-block uppercase font-semibold 
+    bg-[#D11417] text-white px-10 py-4 
+    shadow-2xl hover:shadow-xl transition 
+    relative overflow-hidden rounded-xl 
+  "
+  style={{
+    clipPath: "polygon(0 0, 100% 0, 85% 100%, 0% 100%)",
+    borderBottomRightRadius: "10px",
+  }}
+>
+  Explore More
+</Link>
+
         </div>
         <div className="flex-1 mr-36 relative ">
           <Image
             src="/Rectangle 88.png"
             alt="About 1"
-            width={650}
-            height={550}
+            width={700}
+            height={600}
             className="rounded-xl"
           />
           
           <Image
             src="/Subtract.png"
             alt="About 2"
-            width={550}
-            height={450}
+            width={600}
+            height={500}
             className="rounded-xl mt-7" 
           /> 
           
