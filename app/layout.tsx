@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Open_Sans, David_Libre } from "next/font/google";
 import "./globals.css";
 
-// Default font (for all body text)
+// Default font  
 const openSans = Open_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],

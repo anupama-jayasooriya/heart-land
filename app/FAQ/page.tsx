@@ -12,8 +12,7 @@ export default function FAQ() {
     <FAQHeader />
     <GeneralFaqs />
     <ProductFaqs />
-    <HaveQ />
-    
+    <HaveQ />    
     <Footer />
    
   
