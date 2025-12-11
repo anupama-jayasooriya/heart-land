@@ -7,16 +7,15 @@ const nunito = Nunito({ subsets: ["latin"], variable: "--font-nunito" });
 const openSans = Open_Sans({ subsets: ["latin"], variable: "--font-open-sans" });
 
 export default function Founders() {
-  // Correctly typed ref for array of HTMLDivElement or null
   const cardsRef = useRef<Array<HTMLDivElement | null>>([]);
 
-  // Scroll effect for parallax images
   useEffect(() => {
     const handleScroll = () => {
       cardsRef.current.forEach((card) => {
         if (!card) return;
 
-        const rect = card.getBoundingClientRect();
+        // Cast card explicitly to HTMLDivElement
+        const rect = (card as HTMLDivElement).getBoundingClientRect();
         const offset = rect.top * 0.15;
 
         const img = card.querySelector<HTMLImageElement>(".parallax-img");
@@ -46,7 +45,6 @@ export default function Founders() {
     },
   ];
 
-  // Callback ref function for proper TypeScript typing
   const setCardRef = (el: HTMLDivElement | null, index: number) => {
     cardsRef.current[index] = el;
   };
@@ -69,7 +67,6 @@ export default function Founders() {
             ref={(el) => setCardRef(el, index)}
             className="relative overflow-hidden bg-white group"
           >
-            {/* Image */}
             <div className="h-[420px] w-full overflow-hidden relative">
               <Image
                 src={founder.img}
@@ -79,7 +76,6 @@ export default function Founders() {
               />
             </div>
 
-            {/* Info box */}
             <div className="px-4 py-5 mx-auto w-[80%] text-center border-t-4 border-red-600 bg-white relative -mt-10 z-20 h-32">
               <h3 className={`${openSans.className} font-bold text-xl text-[#000000]`}>
                 {founder.name}
