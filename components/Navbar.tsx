@@ -17,9 +17,12 @@ export default function Navbar() {
   const pathname = usePathname();
   const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+ useEffect(() => {
+  // Wrap in setTimeout to avoid synchronous state update warning
+  const timer = setTimeout(() => setMounted(true), 0);
+  return () => clearTimeout(timer); // cleanup
+}, []);
+
 
   const getActiveLink = (href: string) => {
 
