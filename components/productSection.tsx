@@ -100,29 +100,9 @@ export default function ProductsSection() {
       list = list.filter((p) => selectedCategories.includes(p.category));
     }
 
-    // search
-    const q = query.trim().toLowerCase();
-    if (q.length > 0) {
-      list = list.filter(
-        (p) =>
-          p.title.toLowerCase().includes(q) ||
-          p.category.toLowerCase().includes(q) ||
-          String(p.price).includes(q)
-      );
-    }
+   
 
-    // sort
-    if (sortBy === "bestselling") {
-      list.sort(
-        (a, b) => Number(b.bestseller ? 1 : 0) - Number(a.bestseller ? 1 : 0)
-      );
-    } else if (sortBy === "price-asc") {
-      list.sort((a, b) => a.price - b.price);
-    } else if (sortBy === "price-desc") {
-      list.sort((a, b) => b.price - a.price);
-    } else if (sortBy === "alpha") {
-      list.sort((a, b) => a.title.localeCompare(b.title));
-    }
+    
 
     return list;
   }, [query, selectedCategories, sortBy]);
@@ -135,93 +115,7 @@ export default function ProductsSection() {
 
   return (
     <div className={`${openSans.className} w-full ml-10 max-w-[1200px] mx-auto py-8 -px-2`}>
-      {/* Controls */}
-      <div className="flex flex-col lg:flex-row gap-20 mb-6">
-        {/* Left column: search + toggles */}
-        <div className="flex-1 flex items-center gap-16">
-          <label className="relative flex-1 w-80">
-            {/* Search Icon */}
-            <span className="absolute left-5  text-gray-500 text-3xl">&#x2315;</span>
-
-            <input
-              type="search"
-              value={query}
-              onChange={(e) => {
-                setQuery(e.target.value);
-                setPage(0);
-              }}
-              placeholder="  Search"
-              className="
-      w-full
-      pl-10                
-      py-2
-      rounded-2xl
-      bg-[#F5F5F5]
-      focus:outline-none
-      focus:ring-2
-      focus:ring-gray-300
-    "
-              aria-label="Search products"
-            />
-          </label>
-
-          {/* show all products*/}
-          <div className="text-lg text-[#495057] -ml-4">{`Show all products (${filtered.length})`}</div>
-
-          <div className="flex items-center gap-3">
-            <label className="flex items-center gap-2 text-lg text-[#495057] select-none cursor-pointer">
-              <span>Show image only</span>
-
-              {/* iOS SWITCH */}
-              <div className="relative inline-block w-12 h-6">
-                <input
-                  type="checkbox"
-                  checked={showImageOnly}
-                  onChange={(e) => setShowImageOnly(e.target.checked)}
-                  className="peer absolute w-full h-full opacity-0 cursor-pointer"
-                />
-
-                {/* Track */}
-                <div
-                  className="
-              block w-full h-full rounded-full transition 
-              bg-gray-300 peer-checked:bg-[#4cd964]
-            "
-                ></div>
-
-                {/* Thumb */}
-                <div
-                  className="
-              absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full 
-              transition-all peer-checked:translate-x-6 shadow
-            "
-                ></div>
-              </div>
-            </label>
-          </div>
-        </div>
-
-        {/* Right controls: stats + sort */}
-        <div className="flex items-center gap-7">
-          <div className="flex items-center gap-2">
-            <label className="text-lg text-[#495057]">Sort by : </label>
-            <select
-              value={sortBy}
-              onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {
-  setSortBy(e.target.value as "bestselling" | "price-asc" | "price-desc" | "alpha");
-  setPage(0);
-}}
-
-              className="px-3 py-2 rounded "
-            >
-              <option value="bestselling">Bestselling</option>
-              <option value="price-asc">Price: Low to High</option>
-              <option value="price-desc">Price: High to Low</option>
-              <option value="alpha">A → Z</option>
-            </select>
-          </div>
-        </div>
-      </div>
+       
 
       <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr] gap-8">
         {/* Categories (left) */}
