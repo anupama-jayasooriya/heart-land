@@ -39,10 +39,10 @@ export default function Founders() {
     cardsRef.current[index] = el;
   };
 
-  if (!mounted) return null; // Render nothing on server to prevent hydration mismatch
+  if (!mounted) return null;  
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-0 bg-white">
       {/* Section Header */}
       <div className={`text-center text-2xl max-w-4xl mb-16 mx-auto ${nunito.className}`}>
         <h2 className="text-3xl md:text-5xl font-bold mb-6">Meet Our Founders</h2>

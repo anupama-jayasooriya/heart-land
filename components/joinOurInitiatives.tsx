@@ -20,7 +20,7 @@ React.useEffect(() => {
 }, []);
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="py-6 bg-white relative overflow-hidden">
       {/* Right side background image */}
       <div className="absolute right-0 -top-24 bottom-0 w-[700px] opacity-100 pointer-events-none">
         <Image

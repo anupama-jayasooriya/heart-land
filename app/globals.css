@@ -33,3 +33,8 @@ body {
 .font-davidLibre {
   font-family: var(--font-david-libre);
 }
+ :root {
+  --font-nunito: 'Nunito', sans-serif;
+}
+
+ 
