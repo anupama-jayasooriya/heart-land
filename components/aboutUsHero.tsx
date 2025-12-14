@@ -74,7 +74,7 @@ export default function AboutHero() {
               alt="food 1"
               width={270}
               height={220}
-              className="rounded-lg -ml-14 -mb-3"
+              className="rounded-lg -ml-14 -mb-3" 
             />
             <div className="absolute text-center ml-32 -mb-[19px] text-3xl bottom-4 left-4 bg-[#309EC4] rounded-xl text-white px-7 py-6 font-bold">
               15+ <br />Years
