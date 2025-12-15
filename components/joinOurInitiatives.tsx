@@ -59,7 +59,7 @@ React.useEffect(() => {
 
           {/* Buttons */}
           <div className="flex flex-wrap justify-center md:justify-start gap-4 pt-6">
-            <button className="bg-black text-[20px] hover:bg-gray-900 text-white cursor-pointer px-16 py-3 rounded-full font-semibold transition-colors duration-300">
+            <button className="bg-black text-[20px] text-white cursor-pointer px-16 py-3 rounded-full font-semibold border-2 border-black transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-lg hover:-translate-y-1 transform-gpu hover:bg-white hover:text-black">
               Learn More
             </button>
 

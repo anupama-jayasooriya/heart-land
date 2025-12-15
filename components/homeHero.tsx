@@ -83,14 +83,14 @@ useEffect(() => {
             <div className="flex -ml-8 mt-12 mb-8">
              <Link href="/Product"><button
              
-              className="inline-block cursor-pointer ml-7 h-13 w-30 bg-black text-white px-5 py-2 shadow-md hover:shadow-lg transition-shadow
+              className="inline-block cursor-pointer ml-7 h-13 w-30 bg-black text-white px-5 py-2 shadow-md transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-lg hover:-translate-y-1 transform-gpu hover:bg-white hover:text-black border-2 border-black
              rounded-tl-2xl rounded-br-2xl rounded-tr-sm rounded-bl-sm"
             >
               Products
             </button></Link> 
               <Link href="/About"><button
              
-              className="inline-block cursor-pointer ml-10 h-13 w-40 bg-[#D11417] text-white px-5 py-2 shadow-md hover:shadow-lg transition-shadow
+              className="inline-block cursor-pointer ml-10 h-13 w-40 bg-[#D11417] text-white px-5 py-2 shadow-md transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-lg hover:-translate-y-1 transform-gpu hover:bg-white hover:text-[#D11417] border-2 border-[#D11417]
              rounded-tl-2xl rounded-br-2xl rounded-tr-sm rounded-bl-sm"
             >
               Learn More
