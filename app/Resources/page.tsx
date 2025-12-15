@@ -12,16 +12,12 @@ export default function Resources() {
     <BlogAndNews />
     <SuccessStory />
     <LatestNews />
-<<<<<<< HEAD
     <BlogCards />
     
-    <ResourcesFooter />
+  
    
   
     
-=======
-    <BlogCards />  
->>>>>>> c45fc49f437509abaa5a4c20482cb253a1626c1e
     </ >
   );
 }
