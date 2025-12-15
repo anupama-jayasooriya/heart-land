@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { Open_Sans } from "next/font/google";
+import Image from "next/image";
 
 const openSans = Open_Sans({
   subsets: ["latin"],
@@ -17,44 +18,44 @@ type Product = {
 };
 
 const initialProducts: Product[] = [
-  { id: 1, title: "Essential Electrolytes", price: 60, category: "Biscuits", image: "productImage1.png", bestseller: true },
-  { id: 2, title: "Essential Electrolytes", price: 70, category: "Snacks", image: "productImage2.png", bestseller: false },
-  { id: 3, title: "Essential Electrolytes", price: 80, category: "Rice", image: "productImage3.png", bestseller: false },
-  { id: 4, title: "Essential Electrolytes", price: 90, category: "Sweets", image: "productImage2.png", bestseller: false },
-  { id: 5, title: "Essential Electrolytes", price: 100, category: "Milk", image: "productImage1.png", bestseller: false },
-  { id: 6, title: "Essential Electrolytes", price: 110, category: "Curry Powder", image: "productImage3.png", bestseller: true },
-  { id: 7, title: "Essential Electrolytes", price: 18, category: "Noodles", image: "productImage2.png", bestseller: false },
-  { id: 8, title: "Essential Electrolytes", price: 18, category: "Coconut Milk  ", image: "productImage3.png", bestseller: true },
-  { id: 9, title: "Essential Electrolytes", price: 18, category: "Jam", image: "productImage3.png", bestseller: true },
-  { id: 10, title: "Essential Electrolytes", price: 18, category: "Spices", image: "productImage1.png", bestseller: true },
-  { id: 11, title: "Essential Electrolytes", price: 18, category: "Oil & Ghee", image: "productImage1.png", bestseller: true },
-  { id: 12, title: "Essential Electrolytes", price: 18, category: "Dairy Products", image: "productImage1.png", bestseller: true },
-  { id: 13, title: "Essential Electrolytes", price: 60, category: "Biscuits", image: "productImage1.png", bestseller: true },
-  { id: 14, title: "Essential Electrolytes", price: 70, category: "Snacks", image: "productImage2.png", bestseller: false },
-  { id: 15, title: "Essential Electrolytes", price: 80, category: "Rice", image: "productImage3.png", bestseller: false },
-  { id: 16, title: "Essential Electrolytes", price: 90, category: "Sweets", image: "productImage2.png", bestseller: false },
-  { id: 18, title: "Essential Electrolytes", price: 100, category: "Milk", image: "productImage1.png", bestseller: false },
-  { id: 19, title: "Essential Electrolytes", price: 110, category: "Curry Powder", image: "productImage3.png", bestseller: true },
-  { id: 20, title: "Essential Electrolytes", price: 18, category: "Noodles", image: "productImage2.png", bestseller: false },
-  { id: 21, title: "Essential Electrolytes", price: 18, category: "Coconut Milk  ", image: "productImage3.png", bestseller: true },
-  { id: 22, title: "Essential Electrolytes", price: 18, category: "Jam", image: "productImage3.png", bestseller: true },
-  { id: 23, title: "Essential Electrolytes", price: 18, category: "Spices", image: "productImage1.png", bestseller: true },
-  { id: 24, title: "Essential Electrolytes", price: 18, category: "Oil & Ghee", image: "productImage1.png", bestseller: true },
-  { id: 25, title: "Essential Electrolytes", price: 18, category: "Dairy Products", image: "productImage1.png", bestseller: true },
-  { id: 26, title: "Essential Electrolytes", price: 110, category: "Curry Powder", image: "productImage3.png", bestseller: true },
-  { id: 27, title: "Essential Electrolytes", price: 18, category: "Noodles", image: "productImage2.png", bestseller: false },
-  { id: 28, title: "Essential Electrolytes", price: 18, category: "Coconut Milk  ", image: "productImage3.png", bestseller: true },
-  { id: 29, title: "Essential Electrolytes", price: 18, category: "Jam", image: "productImage3.png", bestseller: true },
-  { id: 30, title: "Essential Electrolytes", price: 18, category: "Spices", image: "productImage1.png", bestseller: true },
-  { id: 31, title: "Essential Electrolytes", price: 18, category: "Oil & Ghee", image: "productImage1.png", bestseller: true },
-  { id: 32, title: "Essential Electrolytes", price: 18, category: "Dairy Products", image: "productImage1.png", bestseller: true },
-  { id: 33, title: "Essential Electrolytes", price: 60, category: "Biscuits", image: "productImage1.png", bestseller: true },
-  { id: 34, title: "Essential Electrolytes", price: 70, category: "Snacks", image: "productImage2.png", bestseller: false },
-  { id: 35, title: "Essential Electrolytes", price: 80, category: "Rice", image: "productImage3.png", bestseller: false },
-  { id: 36, title: "Essential Electrolytes", price: 90, category: "Sweets", image: "productImage2.png", bestseller: false },
-  { id: 38, title: "Essential Electrolytes", price: 100, category: "Milk", image: "productImage1.png", bestseller: false },
-  { id: 39, title: "Essential Electrolytes", price: 110, category: "Curry Powder", image: "productImage3.png", bestseller: true },
-  { id: 40, title: "Essential Electrolytes", price: 18, category: "Noodles", image: "productImage2.png", bestseller: false },
+  { id: 1, title: "Essential Electrolytes", price: 60, category: "Biscuits", image: "/productImage1.png", bestseller: true },
+  { id: 2, title: "Essential Electrolytes", price: 70, category: "Snacks", image: "/productImage2.png", bestseller: false },
+  { id: 3, title: "Essential Electrolytes", price: 80, category: "Rice", image: "/productImage3.png", bestseller: false },
+  { id: 4, title: "Essential Electrolytes", price: 90, category: "Sweets", image: "/productImage2.png", bestseller: false },
+  { id: 5, title: "Essential Electrolytes", price: 100, category: "Milk", image: "/productImage1.png", bestseller: false },
+  { id: 6, title: "Essential Electrolytes", price: 110, category: "Curry Powder", image: "/productImage3.png", bestseller: true },
+  { id: 7, title: "Essential Electrolytes", price: 18, category: "Noodles", image: "/productImage2.png", bestseller: false },
+  { id: 8, title: "Essential Electrolytes", price: 18, category: "Coconut Milk  ", image: "/productImage3.png", bestseller: true },
+  { id: 9, title: "Essential Electrolytes", price: 18, category: "Jam", image: "/productImage3.png", bestseller: true },
+  { id: 10, title: "Essential Electrolytes", price: 18, category: "Spices", image: "/productImage1.png", bestseller: true },
+  { id: 11, title: "Essential Electrolytes", price: 18, category: "Oil & Ghee", image: "/productImage1.png", bestseller: true },
+  { id: 12, title: "Essential Electrolytes", price: 18, category: "Dairy Products", image: "/productImage1.png", bestseller: true },
+  { id: 13, title: "Essential Electrolytes", price: 60, category: "Biscuits", image: "/productImage1.png", bestseller: true },
+  { id: 14, title: "Essential Electrolytes", price: 70, category: "Snacks", image: "/productImage2.png", bestseller: false },
+  { id: 15, title: "Essential Electrolytes", price: 80, category: "Rice", image: "/productImage3.png", bestseller: false },
+  { id: 16, title: "Essential Electrolytes", price: 90, category: "Sweets", image: "/productImage2.png", bestseller: false },
+  { id: 18, title: "Essential Electrolytes", price: 100, category: "Milk", image: "/productImage1.png", bestseller: false },
+  { id: 19, title: "Essential Electrolytes", price: 110, category: "Curry Powder", image: "/productImage3.png", bestseller: true },
+  { id: 20, title: "Essential Electrolytes", price: 18, category: "Noodles", image: "/productImage2.png", bestseller: false },
+  { id: 21, title: "Essential Electrolytes", price: 18, category: "Coconut Milk  ", image: "/productImage3.png", bestseller: true },
+  { id: 22, title: "Essential Electrolytes", price: 18, category: "Jam", image: "/productImage3.png", bestseller: true },
+  { id: 23, title: "Essential Electrolytes", price: 18, category: "Spices", image: "/productImage1.png", bestseller: true },
+  { id: 24, title: "Essential Electrolytes", price: 18, category: "Oil & Ghee", image: "/productImage1.png", bestseller: true },
+  { id: 25, title: "Essential Electrolytes", price: 18, category: "Dairy Products", image: "/productImage1.png", bestseller: true },
+  { id: 26, title: "Essential Electrolytes", price: 110, category: "Curry Powder", image: "/productImage3.png", bestseller: true },
+  { id: 27, title: "Essential Electrolytes", price: 18, category: "Noodles", image: "/productImage2.png", bestseller: false },
+  { id: 28, title: "Essential Electrolytes", price: 18, category: "Coconut Milk  ", image: "/productImage3.png", bestseller: true },
+  { id: 29, title: "Essential Electrolytes", price: 18, category: "Jam", image: "/productImage3.png", bestseller: true },
+  { id: 30, title: "Essential Electrolytes", price: 18, category: "Spices", image: "/productImage1.png", bestseller: true },
+  { id: 31, title: "Essential Electrolytes", price: 18, category: "Oil & Ghee", image: "/productImage1.png", bestseller: true },
+  { id: 32, title: "Essential Electrolytes", price: 18, category: "Dairy Products", image: "/productImage1.png", bestseller: true },
+  { id: 33, title: "Essential Electrolytes", price: 60, category: "Biscuits", image: "/productImage1.png", bestseller: true },
+  { id: 34, title: "Essential Electrolytes", price: 70, category: "Snacks", image: "/productImage2.png", bestseller: false },
+  { id: 35, title: "Essential Electrolytes", price: 80, category: "Rice", image: "/productImage3.png", bestseller: false },
+  { id: 36, title: "Essential Electrolytes", price: 90, category: "Sweets", image: "/productImage2.png", bestseller: false },
+  { id: 38, title: "Essential Electrolytes", price: 100, category: "Milk", image: "/productImage1.png", bestseller: false },
+  { id: 39, title: "Essential Electrolytes", price: 110, category: "Curry Powder", image: "/productImage3.png", bestseller: true },
+  { id: 40, title: "Essential Electrolytes", price: 18, category: "Noodles", image: "/productImage2.png", bestseller: false },
 
 
 ];
@@ -99,29 +100,9 @@ export default function ProductsSection() {
       list = list.filter((p) => selectedCategories.includes(p.category));
     }
 
-    // search
-    const q = query.trim().toLowerCase();
-    if (q.length > 0) {
-      list = list.filter(
-        (p) =>
-          p.title.toLowerCase().includes(q) ||
-          p.category.toLowerCase().includes(q) ||
-          String(p.price).includes(q)
-      );
-    }
+   
 
-    // sort
-    if (sortBy === "bestselling") {
-      list.sort(
-        (a, b) => Number(b.bestseller ? 1 : 0) - Number(a.bestseller ? 1 : 0)
-      );
-    } else if (sortBy === "price-asc") {
-      list.sort((a, b) => a.price - b.price);
-    } else if (sortBy === "price-desc") {
-      list.sort((a, b) => b.price - a.price);
-    } else if (sortBy === "alpha") {
-      list.sort((a, b) => a.title.localeCompare(b.title));
-    }
+    
 
     return list;
   }, [query, selectedCategories, sortBy]);
@@ -133,96 +114,11 @@ export default function ProductsSection() {
   const paginated = filtered.slice(page * pageSize, (page + 1) * pageSize);
 
   return (
-    <div className={`${openSans.className} w-full ml-10 max-w-[1200px] mx-auto py-8 -px-2`}>
-      {/* Controls */}
-      <div className="flex flex-col lg:flex-row gap-20 mb-6">
-        {/* Left column: search + toggles */}
-        <div className="flex-1 flex items-center gap-16">
-          <label className="relative flex-1 w-80">
-            {/* Search Icon */}
-            <span className="absolute left-5  text-gray-500 text-3xl">&#x2315;</span>
-
-            <input
-              type="search"
-              value={query}
-              onChange={(e) => {
-                setQuery(e.target.value);
-                setPage(0);
-              }}
-              placeholder="  Search"
-              className="
-      w-full
-      pl-10                
-      py-2
-      rounded-2xl
-      bg-[#F5F5F5]
-      focus:outline-none
-      focus:ring-2
-      focus:ring-gray-300
-    "
-              aria-label="Search products"
-            />
-          </label>
-
-          {/* show all products*/}
-          <div className="text-lg text-[#495057] -ml-4">{`Show all products (${filtered.length})`}</div>
-
-          <div className="flex items-center gap-3">
-            <label className="flex items-center gap-2 text-lg text-[#495057] select-none cursor-pointer">
-              <span>Show image only</span>
-
-              {/* iOS SWITCH */}
-              <div className="relative inline-block w-12 h-6">
-                <input
-                  type="checkbox"
-                  checked={showImageOnly}
-                  onChange={(e) => setShowImageOnly(e.target.checked)}
-                  className="peer absolute w-full h-full opacity-0 cursor-pointer"
-                />
-
-                {/* Track */}
-                <div
-                  className="
-              block w-full h-full rounded-full transition 
-              bg-gray-300 peer-checked:bg-[#4cd964]
-            "
-                ></div>
-
-                {/* Thumb */}
-                <div
-                  className="
-              absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full 
-              transition-all peer-checked:translate-x-6 shadow
-            "
-                ></div>
-              </div>
-            </label>
-          </div>
-        </div>
-
-        {/* Right controls: stats + sort */}
-        <div className="flex items-center gap-7">
-          <div className="flex items-center gap-2">
-            <label className="text-lg text-[#495057]">Sort by : </label>
-            <select
-              value={sortBy}
-              onChange={(e) => {
-                setSortBy(e.target.value as any);
-                setPage(0);
-              }}
-              className="px-3 py-2 rounded "
-            >
-              <option value="bestselling">Bestselling</option>
-              <option value="price-asc">Price: Low to High</option>
-              <option value="price-desc">Price: High to Low</option>
-              <option value="alpha">A → Z</option>
-            </select>
-          </div>
-        </div>
-      </div>
-
-      <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr] gap-8">
-        {/* Categories (left) */}
+    <div
+  className={`${openSans.className} w-full max-w-[1200px] mx-auto py-8 px-4`}
+>
+  <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr] gap-8 justify-center">
+    {/* Categories (left) */}
         <aside className="hidden lg:block mt-5  leading-14">
           <div className="space-y-3">
             <div className="flex items-center  justify-between ">
@@ -243,7 +139,7 @@ export default function ProductsSection() {
                         type="checkbox"
                         checked={checked}
                         onChange={() => toggleCategory(cat)}
-                        className="w-4 h-4"
+                        className="w-4 h-4 cursor-pointer"
                       />
                       <span className={checked ? "font-medium" : "text-[#495057]"}>
                         {cat}
@@ -281,18 +177,20 @@ export default function ProductsSection() {
                   key={p.id}
                   className="bg-white rounded-xl shadow-sm p-0 hover:shadow-lg transition-shadow duration-200"
                 >
-                  {/* image-only mode hides metadata but preserves card size */}
                   <div
                     className={`rounded-2xl overflow-hidden mb-3 bg-black flex items-center justify-center`}
                     style={{ height: 350 }}
                   >
-                    {/* using <img> with the provided path */}
-                    <img
-                      src={p.image}
-                      alt={p.title}
-                      className="max-h-full w-auto object-contain transition-transform duration-300 transform hover:scale-105"
-                      style={{ maxHeight: "300px" }}
-                    />
+
+                    <div className="relative w-full h-[350px] rounded-2xl overflow-hidden mb-3 bg-black flex items-center justify-center">
+  <Image
+    src={p.image}
+    alt={p.title}
+    fill
+    className="object-contain transition-transform duration-300 transform hover:scale-105"
+  />
+</div>
+
                   </div>
 
                   {!showImageOnly ? (
@@ -315,7 +213,7 @@ export default function ProductsSection() {
             {/* Left Arrow */}
             <button
               onClick={() => goToPage(page - 1)}
-              className="text-xl font-bold px-4 py-2"
+              className="text-xl font-bold px-4 py-2 cursor-pointer"
               aria-label="Previous page"
             >
              &#x2190;
@@ -328,7 +226,7 @@ export default function ProductsSection() {
       key={i}
       onClick={() => goToPage(i)}
       aria-label={`Go to page ${i + 1}`}
-      className="relative w-4 h-4 flex items-center justify-center"
+      className="relative w-4 h-4 flex items-center cursor-pointer justify-center"
     >
       {/* Outer Ring */}
       <span
@@ -338,7 +236,7 @@ export default function ProductsSection() {
 
       {/* Inner Dot */}
       <span
-        className={`absolute w-1 h-1 rounded-full transition 
+        className={`absolute w-1 h-1 rounded-full transition cursor-pointer 
           ${i === page ? "bg-black" : "bg-black"}`}
       />
     </button>
@@ -349,7 +247,7 @@ export default function ProductsSection() {
             {/* Right Arrow */}
             <button
               onClick={() => goToPage(page + 1)}
-              className="text-xl font-bold px-4 py-2"
+              className="text-xl font-bold px-4 py-2 cursor-pointer"
               aria-label="Next page"
             >
               &#x2192;

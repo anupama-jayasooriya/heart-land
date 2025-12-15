@@ -9,16 +9,19 @@ import BlogCards from '@/components/blogCards';
 export default function Resources() {
   return (
     <>
-    <Navbar />
     <BlogAndNews />
     <SuccessStory />
     <LatestNews />
+<<<<<<< HEAD
     <BlogCards />
     
     <ResourcesFooter />
    
   
     
+=======
+    <BlogCards />  
+>>>>>>> c45fc49f437509abaa5a4c20482cb253a1626c1e
     </ >
   );
 }

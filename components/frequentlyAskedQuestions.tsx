@@ -1,8 +1,12 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
+import { useEffect, useRef } from "react";
+
 
 export default function Faq() {
+  
+ 
   const [openIndex, setOpenIndex] = useState(0);
 
   const faqs = [
@@ -33,6 +37,8 @@ export default function Faq() {
     },
   ];
 
+  
+
   return (
     <section className="py-20 bg-white">
         <div className="text-center ">
@@ -46,7 +52,7 @@ export default function Faq() {
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         
         {/* Left Side Images */}
-        <div className="flex justify-center -left-10">
+        <div className="flex justify-center  -left-10">
           <div className="flex gap-4 mr-20">
             <div className="w-24 h-[580px] top-14 relative overflow-hidden rounded-lg">
               <Image
@@ -99,7 +105,7 @@ export default function Faq() {
                   onClick={() =>
                     setOpenIndex(openIndex === index ? -1 : index)
                   }
-                  className={`w-full text-left text-lg font-medium transition-colors duration-300 ${
+                  className={`w-full text-left text-lg cursor-pointer font-medium transition-colors duration-300 ${
                     openIndex === index
                       ? "text-[#D11417]"
                       : "text-gray-800 hover:text-[#ff0004]"
@@ -108,17 +114,23 @@ export default function Faq() {
                   {faq.question}
                 </button>
 
-                {openIndex === index && (
-                  <p className="text-gray-600 mt-3 text-sm leading-relaxed">
+                <div 
+                  className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                    openIndex === index 
+                      ? "max-h-96 opacity-100" 
+                      : "max-h-0 opacity-0"
+                  }`}
+                >
+                  <p className="text-gray-600 mt-3 text-sm leading-relaxed transform transition-transform duration-300">
                     {faq.answer}
                   </p>
-                )}
+                </div>
               </div>
             ))}
           </div>
 
           <div className="mt-10 -ml-20">
-            <button className="px-9 py-3 border-2 text-lg border-[#D11417] text-[#D11417] rounded-full hover:bg-red-600 hover:text-white transition-all duration-300 font-extrabold">
+            <button className="px-9 py-3 border-2 text-lg cursor-pointer border-[#D11417] text-[#D11417] rounded-full hover:bg-red-600 hover:text-white transition-all duration-300 font-extrabold">
               View More
             </button>
           </div>

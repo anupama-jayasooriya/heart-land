@@ -4,8 +4,23 @@ import Image from "next/image";
 import { Play } from "lucide-react";
 
 export default function Initiative() {
+  const imageRef = React.useRef<HTMLDivElement>(null);
+
+React.useEffect(() => {
+  const handleScroll = () => {
+    const y = window.scrollY;
+
+    if (imageRef.current) {
+      imageRef.current.style.transform = `translateY(${y * 0.06}px)`;
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll, { passive: true });
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+
   return (
-    <section className="py-36 bg-white relative overflow-hidden">
+    <section className="py-6 bg-white relative overflow-hidden">
       {/* Right side background image */}
       <div className="absolute right-0 -top-24 bottom-0 w-[700px] opacity-100 pointer-events-none">
         <Image
@@ -19,7 +34,7 @@ export default function Initiative() {
 
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
         {/* Left Section - Images */}
-        <div className="relative ml-20 w-80 h-80 md:w-[430px] md:h-[430px] overflow-visible">
+        <div  ref={imageRef} className="relative ml-20 w-80 h-80 -top-30 md:w-[430px] md:h-[430px] overflow-visible">
           <Image
             src="/Group 69.png"
             alt="Child Initiative"
@@ -44,11 +59,11 @@ export default function Initiative() {
 
           {/* Buttons */}
           <div className="flex flex-wrap justify-center md:justify-start gap-4 pt-6">
-            <button className="bg-black text-[20px] hover:bg-gray-900 text-white px-16 py-3 rounded-full font-semibold transition-colors duration-300">
+            <button className="bg-black text-[20px] hover:bg-gray-900 text-white cursor-pointer px-16 py-3 rounded-full font-semibold transition-colors duration-300">
               Learn More
             </button>
 
-            <button className="group flex items-center justify-center gap-3 border-[3px] border-[#D11417] text-[#000000] font-nunito font-bold text-[20px] leading-[100%] px-6 py-4 rounded-full transition-all duration-300 hover:bg-black hover:text-white">
+            <button className="group flex items-center justify-center gap-3 cursor-pointer border-[3px] border-[#D11417] text-[#000000] font-nunito font-bold text-[20px] leading-[100%] px-6 py-4 rounded-full transition-all duration-300 hover:bg-black hover:text-white">
               <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[#000000] transition-all duration-300 group-hover:bg-white">
                 <Play className="w-7 h-7 fill-white transition-all duration-300 group-hover:fill-[#000000]" />
               </div>
