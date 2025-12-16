@@ -53,7 +53,7 @@ export default function ContactGetInTouch() {
             <div>
              <button
              type="submit"
-              className="inline-block h-12 cursor-pointer bg-[#D11417] text-white px-5 py-2 shadow-md hover:shadow-lg transition-shadow
+              className="inline-block h-12 cursor-pointer bg-[#D11417] text-white px-5 py-2 shadow-md hover:shadow-[0_15px_30px_rgba(209,20,23,0.4)] transition-all duration-300 ease-out hover:scale-105 hover:-translate-y-3 hover:rotate-1 transform-gpu
              rounded-tl-2xl rounded-br-xl rounded-tr-sm rounded-bl-sm"
             >
               Send Message
