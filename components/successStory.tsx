@@ -119,7 +119,8 @@ export default function BlogsSuccessStory() {
                   <button
                     onClick={() => router.push("/")}
                     aria-label="Open article"
-                    style={{ position: "absolute", top: 12, right: 12, width: 44, height: 36, display: "flex", alignItems: "center", justifyContent: "center", background: "transparent", border: 0, cursor: "pointer", padding: 0 }}
+                    className="card-arrow-button"
+                    style={{ position: "absolute", top: 12, right: 12, width: 44, height: 36, display: "flex", alignItems: "center", justifyContent: "center", background: "transparent", border: 0, cursor: "pointer", padding: 0, borderRadius: "50%", transition: "all 0.3s ease-out" }}
                   >
                     <Image src="/whiteArrow.png" alt="Open" width={56} height={56} style={{ objectFit: "contain" }} />
                   </button>
@@ -142,14 +143,25 @@ export default function BlogsSuccessStory() {
         <style jsx>{`
           .cards-scroll-container::-webkit-scrollbar { display: none; }
           .cards-scroll-container { scrollbar-width: none; -ms-overflow-style: none; }
+          
+          .card-arrow-button:hover {
+            transform: scale(1.1) translateY(-2px);
+            box-shadow: 0 8px 16px rgba(255, 255, 255, 0.3);
+          }
+          
+          .nav-arrow-button:hover {
+            transform: scale(1.1) translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            background: rgba(0, 0, 0, 0.05);
+          }
         `}</style>
 
         {/* Arrows */}
         <nav style={{ position: "absolute", top: -70, right: 36, display: "flex", gap: "20px", height: "56px", alignItems: "center", zIndex: 20 }}>
-          <button onClick={scrollLeft} aria-label="Scroll left" style={{ width: 44, height: 44, borderRadius: 10, display: "flex", alignItems: "center", justifyContent: "center", border: 0, cursor: "pointer", background: "transparent", padding: 0 }}>
+          <button onClick={scrollLeft} aria-label="Scroll left" className="nav-arrow-button" style={{ width: 44, height: 44, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", border: 0, cursor: "pointer", background: "transparent", padding: 0, transition: "all 0.3s ease-out" }}>
             <Image src="/leftArrow.png" alt="Left" width={22} height={22} />
           </button>
-          <button onClick={scrollRight} aria-label="Scroll right" style={{ width: 44, height: 44, borderRadius: 10, display: "flex", alignItems: "center", justifyContent: "center", border: 0, cursor: "pointer", background: "transparent", padding: 0 }}>
+          <button onClick={scrollRight} aria-label="Scroll right" className="nav-arrow-button" style={{ width: 44, height: 44, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", border: 0, cursor: "pointer", background: "transparent", padding: 0, transition: "all 0.3s ease-out" }}>
             <Image src="/rightArrow.png" alt="Right" width={22} height={22} />
           </button>
         </nav>
