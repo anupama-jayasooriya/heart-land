@@ -22,12 +22,13 @@ export default function CommunitySection() {
 
         {/* IMAGE */}
         <Image
-  src="/unsplash.png"
+  src="/community-hero.png"
   alt="Community"
-  width={900}        
-  height={800}       
-  className="max-w-[1800px] w-auto h-auto rounded-r-[70px] transition-transform duration-300"
+  width={900}
+  height={800}
+  className="max-w-[1800px] w-auto h-auto rounded-r-[70px]"
 />
+
 
 
         {/* TEXT */}
