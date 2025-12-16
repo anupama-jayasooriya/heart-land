@@ -84,13 +84,14 @@ export default function Navbar() {
       {/* Contact Button */}
       <div className="hidden md:block">
         <Link href="/Contact">
-          <Image
-            src="/contact-button.png"
-            alt="Contact button"
-            width={160}
-            height={130}
-            className="object-contain mr-3.5"
-          />
+          <button
+             
+              className="inline-block h-16 cursor-pointer bg-[#D11417] text-white px-8 py-5 shadow-md hover:shadow-lg transition-shadow
+              rounded-2xl font-normal text-lg "
+            >
+             Contact Us
+            </button>
+
         </Link>
       </div>
     </header>
