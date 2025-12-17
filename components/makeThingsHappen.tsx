@@ -77,7 +77,7 @@ export default function HeroBanner() {
               {/* CTA */}
               <Link href="/Contact">
                 <button
-                  className="mt-6 inline-flex items-center justify-center cursor-pointer px-9 py-2 rounded-full border border-white text-white font-openSans font-semibold text-[16px] leading-4 tracking-[0.43em] transition-colors duration-200"
+                  className="mt-6 inline-flex items-center justify-center cursor-pointer px-9 py-2 rounded-full border border-white text-white font-openSans font-semibold text-[16px] leading-4 tracking-[0.43em] transition-all duration-300 ease-out hover:scale-110 hover:shadow-[0_12px_24px_rgba(255,255,255,0.2)] hover:-translate-y-2 hover:bg-white hover:text-[#D11417] transform-gpu"
                   style={{ textTransform: "uppercase" }}
                 >
                   CONTACT US

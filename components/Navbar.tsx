@@ -84,14 +84,9 @@ export default function Navbar() {
       {/* Contact Button */}
       <div className="hidden md:block">
         <Link href="/Contact">
-          <button
-             
-              className="inline-block h-16 cursor-pointer bg-[#D11417] text-white px-8 py-5 shadow-md hover:shadow-lg transition-shadow
-              rounded-2xl font-normal text-lg "
-            >
-             Contact Us
-            </button>
-
+          <button className="relative mr-3.5 px-6 py-3 bg-[#D11417] text-white font-semibold text-lg rounded-lg border-2 border-[#D11417] transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-lg hover:-translate-y-1 transform-gpu hover:bg-white hover:text-[#D11417]">
+            Contact Us
+          </button>
         </Link>
       </div>
     </header>

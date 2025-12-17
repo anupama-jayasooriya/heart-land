@@ -81,7 +81,7 @@ export default function Footer() {
 
     <p className="text-sm mb-1">info@heartlandtrading.ae</p>
     <p className="text-sm mb-4">+971 4 265 9072</p>
-    <button className="text-sm underline">Inquire Now</button>
+    <button className="text-sm underline transition-all duration-300 ease-out hover:scale-105 hover:text-[#D11417] hover:shadow-[0_8px_16px_rgba(209,20,23,0.2)] hover:-translate-y-1 transform-gpu">Inquire Now</button>
   </div>
 
 </div>
