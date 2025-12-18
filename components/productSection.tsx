@@ -213,7 +213,7 @@ export default function ProductsSection() {
             {/* Left Arrow */}
             <button
               onClick={() => goToPage(page - 1)}
-              className="text-xl font-bold px-4 py-2 cursor-pointer"
+              className="text-xl font-bold px-4 py-2 cursor-pointer transition-all duration-300 ease-out hover:scale-120 hover:-translate-y-1"
               aria-label="Previous page"
             >
              &#x2190;
@@ -247,7 +247,7 @@ export default function ProductsSection() {
             {/* Right Arrow */}
             <button
               onClick={() => goToPage(page + 1)}
-              className="text-xl font-bold px-4 py-2 cursor-pointer"
+              className="text-xl font-bold px-4 py-2 cursor-pointer transition-all duration-300 ease-out hover:scale-120 hover:-translate-y-1"
               aria-label="Next page"
             >
               &#x2192;
