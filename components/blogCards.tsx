@@ -202,23 +202,27 @@ export default function BlogSection() {
 
         .grid {
           display: grid;
-          grid-template-columns: repeat(3, 370px);
+          grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
           gap: 40px;
-          justify-content: start;
+          justify-content: center;
+          max-width: 1200px;
+          margin: 0 auto;
         }
 
         .card {
-          width: 370px;
+          width: 100%;
+          max-width: 370px;
           height: 549px;
           border-radius: 15px;
           box-shadow: 4px 4px 6.6px rgba(0, 0, 0, 0.25);
           display: flex;
           flex-direction: column;
+          margin: 0 auto;
         }
 
         .imagePlaceholder {
           position: relative;
-          width: 375px;
+          width: 100%;
           height: 300px;
           border-radius: 10px 10px 0 0;
         }
@@ -291,6 +295,206 @@ export default function BlogSection() {
 
         .dot {
           font-size: 18px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1440px) {
+          .grid {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+            max-width: 1200px;
+          }
+          
+          .card {
+            max-width: 100%;
+            height: 549px;
+          }
+        }
+
+        @media (max-width: 1024px) {
+          .container {
+            padding: 0 40px;
+          }
+          
+          .grid {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+          }
+          
+          .card {
+            max-width: 100%;
+            height: 480px;
+          }
+          
+          .imagePlaceholder {
+            height: 240px;
+          }
+          
+          .content {
+            padding: 14px;
+            gap: 7px;
+          }
+          
+          .title {
+            font-size: 20px;
+            line-height: 1.35;
+          }
+          
+          .description {
+            font-size: 15px;
+            line-height: 145%;
+          }
+          
+          .cardCategory {
+            font-size: 13px;
+          }
+          
+          .avatarImage {
+            width: 42px;
+            height: 42px;
+          }
+          
+          .avatarName {
+            font-size: 13px;
+          }
+          
+          .meta {
+            font-size: 13px;
+          }
+          
+          .categories {
+            flex-wrap: wrap;
+            gap: 16px;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .container {
+            padding: 0 20px;
+          }
+          
+          .grid {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            max-width: 100%;
+          }
+          
+          .categories {
+            justify-content: center;
+            padding-left: 0;
+          }
+          
+          .card {
+            max-width: 100%;
+            height: 420px;
+          }
+          
+          .imagePlaceholder {
+            height: 200px;
+          }
+          
+          .content {
+            padding: 12px;
+            gap: 6px;
+          }
+          
+          .title {
+            font-size: 18px;
+            line-height: 1.3;
+          }
+          
+          .description {
+            font-size: 14px;
+            line-height: 140%;
+          }
+          
+          .cardCategory {
+            font-size: 12px;
+          }
+          
+          .avatarImage {
+            width: 36px;
+            height: 36px;
+          }
+          
+          .avatarName {
+            font-size: 12px;
+          }
+          
+          .meta {
+            font-size: 12px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .section {
+            padding: 30px 0 60px 0;
+          }
+          
+          .container {
+            padding: 0 16px;
+          }
+          
+          .grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
+            max-width: 350px;
+          }
+          
+          .card {
+            height: 480px;
+          }
+          
+          .imagePlaceholder {
+            height: 240px;
+          }
+          
+          .content {
+            padding: 16px;
+            gap: 8px;
+          }
+          
+          .title {
+            font-size: 20px;
+            line-height: 1.4;
+          }
+          
+          .description {
+            font-size: 15px;
+            line-height: 150%;
+          }
+          
+          .cardCategory {
+            font-size: 13px;
+          }
+          
+          .avatarImage {
+            width: 42px;
+            height: 42px;
+          }
+          
+          .avatarName {
+            font-size: 13px;
+          }
+          
+          .meta {
+            font-size: 13px;
+          }
+          
+          .categories {
+            gap: 12px;
+          }
+          
+          .viewAll {
+            font-size: 14px;
+            padding: 0 12px;
+            height: 36px;
+            line-height: 36px;
+          }
+          
+          .categoryText {
+            font-size: 14px;
+          }
         }
       `}</style>
     </section>
