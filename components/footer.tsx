@@ -39,20 +39,20 @@ export default function Footer() {
             <div>
               <h4 className="font-semibold text-[16px] mb-4">Quick Link</h4>
               <ul className="space-y-3 text-sm text-white">
-                <li><a href="/About">About Us</a></li>
-                <li><a href="/Product">Our Products</a></li>
-                <li><a href="/CSR">CSR Initiatives</a></li>
-                <li><a href="/About">Careers</a></li>
-                <li><a href="/Contact">Contact Us</a></li>
+                <li><a href="/About" className="hover:text-[#D11417] transition-colors duration-300">About Us</a></li>
+                <li><a href="/Product" className="hover:text-[#D11417] transition-colors duration-300">Our Products</a></li>
+                <li><a href="/CSR" className="hover:text-[#D11417] transition-colors duration-300">CSR Initiatives</a></li>
+                <li><a href="/About" className="hover:text-[#D11417] transition-colors duration-300">Careers</a></li>
+                <li><a href="/Contact" className="hover:text-[#D11417] transition-colors duration-300">Contact Us</a></li>
               </ul>
             </div>
 
             <div>
               <h4 className="font-semibold text-[16px] mb-4">Information</h4>
               <ul className="space-y-3 text-sm text-white">
-                <li><a href="/FAQ">FAQ</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">News</a></li>
+                <li><a href="/FAQ" className="hover:text-[#D11417] transition-colors duration-300">FAQ</a></li>
+                <li><a href="#" className="hover:text-[#D11417] transition-colors duration-300">Blog</a></li>
+                <li><a href="#" className="hover:text-[#D11417] transition-colors duration-300">News</a></li>
               </ul>
             </div>
           </div>
@@ -135,9 +135,9 @@ export default function Footer() {
 
           {/* Terms Privacy Cookies */}
           <div className="flex justify-center gap-6 text-sm text-white">
-            <a href="#">Terms</a>
-            <a href="#">Privacy</a>
-            <a href="#">Cookies</a>
+            <a href="#" className="hover:text-[#D11417] transition-colors duration-300">Terms</a>
+            <a href="#" className="hover:text-[#D11417] transition-colors duration-300">Privacy</a>
+            <a href="#" className="hover:text-[#D11417] transition-colors duration-300">Cookies</a>
           </div>
         </div>
 
@@ -175,20 +175,20 @@ export default function Footer() {
               <div className="md:row-span-2">
                 <h4 className="font-semibold mb-4 lg:-mt-5">Quick Link</h4>
                 <ul className="space-y-5 lg:space-y-5 text-sm text-gray-300">
-                  <li><a href="/About">About Us</a></li>
-                  <li><a href="/Product">Our Products</a></li>
-                  <li><a href="/CSR">CSR Initiatives</a></li>
-                  <li><a href="/About">Careers</a></li>
-                  <li><a href="/Contact">Contact Us</a></li>
+                  <li><a href="/About" className="hover:text-[#D11417] transition-colors duration-300">About Us</a></li>
+                  <li><a href="/Product" className="hover:text-[#D11417] transition-colors duration-300">Our Products</a></li>
+                  <li><a href="/CSR" className="hover:text-[#D11417] transition-colors duration-300">CSR Initiatives</a></li>
+                  <li><a href="/About" className="hover:text-[#D11417] transition-colors duration-300">Careers</a></li>
+                  <li><a href="/Contact" className="hover:text-[#D11417] transition-colors duration-300">Contact Us</a></li>
                 </ul>
               </div>
 
               <div>
                 <h4 className="font-semibold mb-4 lg:-mt-24">Information</h4>
                 <ul className="space-y-3 lg:space-y-5 text-sm text-gray-300">
-                  <li><a href="/FAQ">FAQ</a></li>
-                  <li><a href="#">Blog</a></li>
-                  <li><a href="#">News</a></li>
+                  <li><a href="/FAQ" className="hover:text-[#D11417] transition-colors duration-300">FAQ</a></li>
+                  <li><a href="#" className="hover:text-[#D11417] transition-colors duration-300">Blog</a></li>
+                  <li><a href="#" className="hover:text-[#D11417] transition-colors duration-300">News</a></li>
                 </ul>
               </div>
 
@@ -209,7 +209,7 @@ export default function Footer() {
 
                 <p className="text-sm mb-1">info@heartlandtrading.ae</p>
                 <p className="text-sm mb-4">+971 4 265 9072</p>
-                <button className="text-sm underline transition-all duration-300 ease-out hover:scale-105 hover:text-[#D11417] hover:shadow-[0_8px_16px_rgba(209,20,23,0.2)] hover:-translate-y-1 transform-gpu">Inquire Now</button>
+                <button className="text-sm underline transition-all duration-300 ease-out hover:scale-105 hover:text-[#D11417]  hover:-translate-y-1 transform-gpu">Inquire Now</button>
               </div>
 
             </div>
@@ -221,9 +221,9 @@ export default function Footer() {
             <p className="text-center md:text-left">© 2025 Heartland General Trading FZE. All Rights Reserved.</p>
 
             <div className="flex gap-4 md:gap-6">
-              <a href="#">Terms</a>
-              <a href="#">Privacy</a>
-              <a href="#">Cookies</a>
+              <a href="#" className="hover:text-[#D11417] transition-colors duration-300">Terms</a>
+              <a href="#" className="hover:text-[#D11417] transition-colors duration-300">Privacy</a>
+              <a href="#" className="hover:text-[#D11417] transition-colors duration-300">Cookies</a>
             </div>
 
             <div className="flex items-center gap-3 md:gap-4">
