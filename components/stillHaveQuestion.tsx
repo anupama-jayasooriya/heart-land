@@ -22,7 +22,7 @@ export default function HaveQ() {
   const parallax = (multiplier: number) => scrollY * multiplier;
 
   const sectionClass =
-    "relative w-full h-[260px] md:h-[303px] py-10 bg-[#000000] text-white overflow-hidden md:rounded-tr-[50px] " +
+    "relative w-full h-[260px] md:mb-5 md:h-[303px] py-10 bg-[#000000] text-white overflow-hidden md:rounded-tr-[50px] " +
     openSans.className;
 
   return (
@@ -65,8 +65,8 @@ export default function HaveQ() {
   className="
     absolute
     right-7 md:right-8
-    top-30 md:top-40
-    -translate-y-1/2
+    top-10 md:top-40
+    -translate-y-40
     pointer-events-none
     w-30 h-25 md:w-[220px] md:h-[220px]
   "
