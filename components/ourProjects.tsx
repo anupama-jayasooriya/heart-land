@@ -76,9 +76,12 @@ export default function OurProjects() {
 
       {/* Subtitle */}
       <div className="flex items-center gap-3 mb-5">
-       <p className={`${openSans.className} text-[13px] text-center justify-center md:text-left text-[#D12714]`}>
+       <p
+  className={`${openSans.className} text-[13px] text-center md:text-left text-[#D12714] mx-auto md:mx-0`}
+>
   Transforming Lives Across Sri Lanka
 </p>
+
 
 <div className="w-[70px] h-px bg-[#ec2c2c] hidden md:block"></div>
       </div>
@@ -94,7 +97,15 @@ export default function OurProjects() {
       </p>
 
       {/* Cards Wrapper */}
-      <div className="flex flex-col md:flex-row gap-6 mt-5 w-full items-center md:items-start">
+<div
+  className="flex flex-col md:flex-row gap-6 mt-5 w-full items-center md:items-start
+             relative
+             bg-[url('/bgpattern.png')]
+             bg-repeat
+             bg-top
+             py-10
+             md:bg-none"
+>
         {cardsToShow.map((card) => (
           <div 
             key={card.id} 
