@@ -25,24 +25,24 @@ React.useEffect(() => {
 }, []);
 
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-full w-auto ">
+    <section className="py-10 md:py-20 bg-white">
+      <div className="max-w-full w-auto">
         {/* Full-width Gradient Section */}
-<div className=" bg-gradient-to-b from-[#fcd6d6] to-[#f5585866] py-7">
-  
+<div className="bg-gradient-to-b from-[#fcd6d6] to-[#f5585866] py-7">
+
   {/* Content */}
-  <div className="text-center -py-10">
-    <h2 className="text-3xl md:text-4xl font-bold text-black mb-8">
+  <div className="text-center px-4">
+    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-6 md:mb-8">
       Our Trusted Partners
     </h2>
 
-    <div className="flex justify-center mb-10">
+    <div className="flex justify-center mb-8 md:mb-10 px-4">
       <Image
         src="/Group 68.png"
         alt="partners"
         width={1900}
         height={1000}
-        className="object-contain"
+        className="object-contain w-full max-w-[1900px]"
       />
     </div>
   </div>
@@ -51,32 +51,32 @@ React.useEffect(() => {
 
 
         {/* About Section   */}
-        <div className="mx-auto mb-10 mt-32 max-w-[1100px] px-6">
+        <div className="mx-auto mb-0 mt-5 md:mt-20 max-w-[1100px] px-6 md:px-8 text-center lg:text-left">
 
-          <p className="text-[#6D7D7D] text-sm tracking-widest uppercase mb-3">
+          <p className="text-[#6D7D7D] text-sm sm:text-base md:text-lg lg:text-sm tracking-widest uppercase mb-3">
             About
           </p>
 
-          <h3 className="text-3xl md:text-4xl font-bold text-black leading-tight mb-4">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black leading-tight mb-4">
             Your Trusted Partner in Sri Lankan Food Distribution
           </h3>
 
-          <p className="text-gray-700 text-xl mt-5 leading-relaxed max-w-[1100px]">
+          <p className="text-gray-700 text-base sm:text-lg md:text-xl mt-5 mb-0 leading-relaxed">
             <span className="font-semibold text-black">
               Heartland General Trading Co. LLC
             </span>{" "}
-            is a leading importer and distributor of premium Sri Lankan food 
-            products in the UAE. Based in Dubai, we connect authentic Sri Lankan 
+            is a leading importer and distributor of premium Sri Lankan food
+            products in the UAE. Based in Dubai, we connect authentic Sri Lankan
             flavors with global markets through trusted partnerships and modern logistics.
           </p>
         </div>
 
         {/* Two-column section */}
-<div className="relative grid mx-auto max-w-[1100px] px-6 gap-10 items-start">
+<div className="relative mx-auto max-w-[1100px] px-6">
   {/* Left: image group */}
-  <div ref={mediumRef} className="relative flex gap-5 -top-30 justify-start">
+  <div ref={slowRef} className="relative hidden lg:flex flex-wrap lg:flex-nowrap gap-2 sm:gap-3 md:gap-4 lg:gap-5 justify-center lg:justify-start mb-8 lg:mb-0">
     {/* Market image */}
-    <div className="w-[230px] h-[420px] overflow-hidden">
+    <div className="w-[90px] sm:w-[120px] md:w-[180px] lg:w-[230px] h-[160px] sm:h-[220px] md:h-[320px] lg:h-[420px] overflow-hidden">
       <Image
         src="/market.png"
         alt="Food market"
@@ -87,7 +87,7 @@ React.useEffect(() => {
     </div>
 
     {/* Rice image */}
-    <div className="w-[230px] h-[420px] overflow-hidden">
+    <div className="w-[90px] sm:w-[120px] md:w-[180px] lg:w-[230px] h-[160px] sm:h-[220px] md:h-[320px] lg:h-[420px] overflow-hidden">
       <Image
         src="/Rice.png"
         alt="Rice"
@@ -98,7 +98,7 @@ React.useEffect(() => {
     </div>
 
     {/* Spices image */}
-    <div className="w-[230px] h-[270px] overflow-hidden rounded-tr-[50px]">
+    <div className="w-[90px] sm:w-[120px] md:w-[180px] lg:w-[230px] h-[100px] sm:h-[140px] md:h-[200px] lg:h-[270px] overflow-hidden rounded-tr-[20px] sm:rounded-tr-[30px] md:rounded-tr-[40px] lg:rounded-tr-[50px]">
       <Image
         src="/IMG3.png"
         alt="Spices"
@@ -109,30 +109,32 @@ React.useEffect(() => {
     </div>
   </div>
 
-  {/* Right: Read More button (absolute) */}
-  <div className="absolute top-32 right-10">
+  {/* Right: Read More button */}
+  <div className="flex justify-center lg:absolute lg:top-48 lg:right-10 mt-8 lg:mt-0">
     <Link href="/About">
       <button
         type="button"
-        className="bg-[#D11417] text-white cursor-pointer px-9 py-4 rounded-full font-semibold border-2 border-[#D11417] transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-lg hover:-translate-y-1 transform-gpu hover:bg-white hover:text-[#D11417]"
+        className="bg-[#D11417] text-white cursor-pointer px-6 sm:px-9 py-3 sm:py-4 rounded-full font-semibold border-2 border-[#D11417] transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-lg hover:-translate-y-1 transform-gpu hover:bg-white hover:text-[#D11417]"
       >
         Read More
       </button>
     </Link>
   </div>
-<div className="absolute top-[327px] -right-32  w-full max-w-[900px] flex flex-wrap justify-center gap-16 px-6">
+
+  {/* Stats section */}
+<div className="relative lg:absolute lg:top-[400px] lg:right-0 w-full lg:max-w-[700px] flex flex-wrap justify-center lg:justify-end gap-8 sm:gap-12 lg:gap-16 px-6 mt-8 lg:mt-0">
 
   {/* 15+ Years Expertise */}
 <div className="text-center lg:text-left">
   <h4
-    className="font-normal font-['Open_Sans'] text-[40px] leading-[120%] text-[#6D7D7D]"
+    className="font-normal font-['Open_Sans'] text-[28px] sm:text-[32px] md:text-[40px] leading-[120%] text-[#6D7D7D]"
     style={{ letterSpacing: "20%" }}
   >
     15+
   </h4>
 
   <p
-    className="mt-1 font-semibold font-['Open_Sans'] text-[16px] leading-[130%] uppercase text-[#000000]"
+    className="mt-1 font-semibold font-['Open_Sans'] text-[12px] sm:text-[14px] md:text-[16px] leading-[130%] uppercase text-[#000000]"
     style={{ letterSpacing: "90%" }}
   >
     Y e a r s <br /> E x p e r t i s e
@@ -143,13 +145,13 @@ React.useEffect(() => {
   {/* 30+ Partner Brands */}
   <div className="text-center lg:text-left">
     <h4
-      className="font-normal font-['Open_Sans'] text-[40px] leading-[120%] text-[#6D7D7D]"
+      className="font-normal font-['Open_Sans'] text-[28px] sm:text-[32px] md:text-[40px] leading-[120%] text-[#6D7D7D]"
       style={{ letterSpacing: "20%" }}
     >
       30+
     </h4>
     <p
-      className="mt-1 font-semibold font-['Open_Sans'] text-[16px] leading-[130%] uppercase text-[#000000]"
+      className="mt-1 font-semibold font-['Open_Sans'] text-[12px] sm:text-[14px] md:text-[16px] leading-[130%] uppercase text-[#000000]"
       style={{ letterSpacing: "43%" }}
     >
       P a r t n e r <br /> B r a n d s
@@ -159,13 +161,13 @@ React.useEffect(() => {
   {/* 1000+ Happy Clients */}
   <div className="text-center lg:text-left">
     <h4
-      className="font-normal font-['Open_Sans'] text-[40px] leading-[120%] text-[#6D7D7D]"
+      className="font-normal font-['Open_Sans'] text-[28px] sm:text-[32px] md:text-[40px] leading-[120%] text-[#6D7D7D]"
       style={{ letterSpacing: "0%" }}
     >
       1000+
     </h4>
     <p
-      className="mt-1 font-semibold font-['Open_Sans'] text-[16px] leading-[130%] uppercase text-[#000000]"
+      className="mt-1 font-semibold font-['Open_Sans'] text-[12px] sm:text-[14px] md:text-[16px] leading-[130%] uppercase text-[#000000]"
       style={{ letterSpacing: "43%" }}
     >
       H a p p y <br /> C l i e n t s

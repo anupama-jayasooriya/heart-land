@@ -40,21 +40,21 @@ export default function Faq() {
   
 
   return (
-    <section className="py-20 bg-white">
-        <div className="text-center ">
-  <p className="uppercase text-gray-400 tracking-[0.5em] text-sm  mb-3">
+    <section className="py-10 md:py-20 bg-white">
+        <div className="text-center px-4">
+  <p className="uppercase text-gray-400 tracking-[0.3em] sm:tracking-[0.5em] text-xs sm:text-sm mb-3">
     F A Q
   </p>
-  <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-10">
+  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-8 md:mb-10">
     Frequently Asked Questions
   </h2>
 </div>
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
+
         {/* Left Side Images */}
-        <div className="flex justify-center  -left-10">
-          <div className="flex gap-4 mr-20">
-            <div className="w-24 h-[580px] top-14 relative overflow-hidden rounded-lg">
+        <div className="flex justify-center order-2 lg:order-1">
+          <div className="flex gap-2 sm:gap-3 md:gap-4">
+            <div className="w-16 sm:w-20 md:w-24 h-[280px] sm:h-[400px] md:h-[580px] top-6 sm:top-10 md:top-14 relative overflow-hidden rounded-lg">
               <Image
                 src="/Frame 987.png"
                 alt="spices"
@@ -62,7 +62,7 @@ export default function Faq() {
                 className="object-cover"
               />
             </div>
-            <div className="w-24 h-[580px] relative overflow-hidden rounded-lg">
+            <div className="w-16 sm:w-20 md:w-24 h-[280px] sm:h-[400px] md:h-[580px] relative overflow-hidden rounded-lg">
               <Image
                 src="/Frame 988.png"
                 alt="spices"
@@ -70,7 +70,7 @@ export default function Faq() {
                 className="object-cover"
               />
             </div>
-            <div className="w-24 h-[580px] top-14 relative overflow-hidden rounded-lg">
+            <div className="w-16 sm:w-20 md:w-24 h-[280px] sm:h-[400px] md:h-[580px] top-6 sm:top-10 md:top-14 relative overflow-hidden rounded-lg">
               <Image
                 src="/Frame 989.png"
                 alt="spices"
@@ -78,7 +78,7 @@ export default function Faq() {
                 className="object-cover"
               />
             </div>
-            <div className="w-24 h-[580px] relative overflow-hidden rounded-lg">
+            <div className="w-16 sm:w-20 md:w-24 h-[280px] sm:h-[400px] md:h-[580px] relative overflow-hidden rounded-lg">
               <Image
                 src="/Frame 990.png"
                 alt="spices"
@@ -88,24 +88,24 @@ export default function Faq() {
             </div>
           </div>
         </div>
-        
+
 
         {/* Right Side FAQ Section */}
-        <div>          
+        <div className="order-1 lg:order-2">
 
-          <div className="space-y-5  mr-10 -ml-20 ">
+          <div className="space-y-4 sm:space-y-5">
             {faqs.map((faq, index) => (
               <div
                 key={index}
                 className={`border-b ${
                   openIndex === index ? "border-[#D11417]" : "border-gray-200"
-                } pb-4 transition-all duration-300`}
+                } pb-3 sm:pb-4 transition-all duration-300`}
               >
                 <button
                   onClick={() =>
                     setOpenIndex(openIndex === index ? -1 : index)
                   }
-                  className={`w-full text-left text-lg cursor-pointer font-medium transition-colors duration-300 ${
+                  className={`w-full text-left text-base sm:text-lg cursor-pointer font-medium transition-colors duration-300 ${
                     openIndex === index
                       ? "text-[#D11417]"
                       : "text-gray-800 hover:text-[#ff0004]"
@@ -114,14 +114,14 @@ export default function Faq() {
                   {faq.question}
                 </button>
 
-                <div 
+                <div
                   className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                    openIndex === index 
-                      ? "max-h-96 opacity-100" 
+                    openIndex === index
+                      ? "max-h-96 opacity-100"
                       : "max-h-0 opacity-0"
                   }`}
                 >
-                  <p className="text-gray-600 mt-3 text-sm leading-relaxed transform transition-transform duration-300">
+                  <p className="text-gray-600 mt-2 sm:mt-3 text-xs sm:text-sm leading-relaxed transform transition-transform duration-300">
                     {faq.answer}
                   </p>
                 </div>
@@ -129,8 +129,8 @@ export default function Faq() {
             ))}
           </div>
 
-          <div className="mt-10 -ml-20">
-            <button className="px-9 py-3 border-2 text-lg cursor-pointer border-[#D11417] text-[#D11417] rounded-full hover:bg-red-600 hover:text-white transition-all duration-300 font-extrabold hover:scale-[1.02] hover:-translate-y-1">
+          <div className="mt-8 sm:mt-10 flex justify-center lg:justify-start">
+            <button className="px-6 sm:px-9 py-2.5 sm:py-3 border-2 text-base sm:text-lg cursor-pointer border-[#D11417] text-[#D11417] rounded-full hover:bg-red-600 hover:text-white transition-all duration-300 font-extrabold hover:scale-[1.02] hover:-translate-y-1">
               View More
             </button>
           </div>
