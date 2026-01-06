@@ -27,6 +27,19 @@ export default function WhatPeopleSays() {
       text: "Before joining Heartland’s farmer training program, I struggled to find consistent buyers for my crops. With their guidance, I learned modern cultivation methods and now supply directly to export channels. My income has doubled, and I feel proud to represent Sri Lankan produce globally.",
     },
   ];
+  useEffect(() => {
+  if (typeof window === "undefined") return;
+
+  const isMobile = window.innerWidth < 768;
+  if (!isMobile) return;
+
+  const interval = setInterval(() => {
+    setActive((prev) => (prev + 1) % cards.length);
+  }, 3000);
+
+  return () => clearInterval(interval);
+}, [cards.length]);
+
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);

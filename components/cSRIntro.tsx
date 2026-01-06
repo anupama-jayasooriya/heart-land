@@ -35,7 +35,8 @@ export default function CsrIntro() {
   const parallax = (multiplier: number) => `translateY(${scrollY * multiplier}px)`;
 
   return (
-    <section className="w-full max-w-[1400px] mx-auto px-6 py-10 md:px-10">
+    <section className="w-full max-w-[1400px] mx-auto px-6 py-10 md:px-10 bg-[#EEEEEE] md:bg-transparent">
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-7 items-center">
         {/* RIGHT SIDE IMAGE / VIDEO */}
         <div
