@@ -20,12 +20,21 @@ export default function Navbar() {
   const router = useRouter();
   const [mounted, setMounted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
   const { isNavigating, setIsNavigating } = useNavigation();
 
   useEffect(() => {
     const timer = setTimeout(() => setMounted(true), 0);
     return () => clearTimeout(timer);
   }, []);
+
+  const handleClose = () => {
+    setIsClosing(true);
+    setTimeout(() => {
+      setIsOpen(false);
+      setIsClosing(false);
+    }, 300); // Match animation duration
+  };
 
   const getActiveLink = (href: string) => {
     if (href === "/") return pathname === "/";
@@ -113,7 +122,7 @@ export default function Navbar() {
 
       {/* ================= MOBILE MENU ================= */}
       {isOpen && (
-        <div className="fixed inset-0 z-50 bg-[#D11417] text-white flex flex-col px-8 py-6 md:hidden animate-slideDown">
+        <div className={`fixed inset-0 z-50 bg-[#D11417] text-white flex flex-col px-8 py-6 md:hidden ${isClosing ? 'animate-slideUp' : 'animate-slideDown'}`}>
 
           {/* Top */}
           <div className="flex justify-center items-center animate-fadeInDown animation-delay-100">
@@ -126,7 +135,7 @@ export default function Navbar() {
             /></div>
            <div className="absolute top-5 right-5 animate-fadeInDown animation-delay-200">
   <button
-    onClick={() => setIsOpen(false)}
+    onClick={handleClose}
     className="w-7 h-7 flex items-center justify-center
                text-lg rounded-full border border-white
                hover:bg-white hover:text-[#D11417]
@@ -143,7 +152,7 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                onClick={() => setIsOpen(false)}
+                onClick={handleClose}
                 className="hover:opacity-80 animate-fadeInDown opacity-0"
                 style={{
                   animationDelay: `${400 + index * 80}ms`,
@@ -155,7 +164,7 @@ export default function Navbar() {
             ))}
             <Link
               href="/Contact"
-              onClick={() => setIsOpen(false)}
+              onClick={handleClose}
               className="hover:opacity-80 animate-fadeInDown opacity-0"
               style={{
                 animationDelay: `${400 + links.length * 80}ms`,

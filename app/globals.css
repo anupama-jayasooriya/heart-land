@@ -55,6 +55,17 @@ body {
   }
 }
 
+@keyframes slideUp {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
 @keyframes fadeInDown {
   0% {
     opacity: 0;
@@ -79,6 +90,10 @@ body {
 
 .animate-slideDown {
   animation: slideDown 0.4s ease-in-out forwards;
+}
+
+.animate-slideUp {
+  animation: slideUp 0.3s ease-in-out forwards;
 }
 
 .animate-fadeInDown {
